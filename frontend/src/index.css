@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    background-color: #0A0809;
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+}
+
+.bg-crimson-fluted {
+  background-color: #0A0809;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.032) 0px,
+      rgba(255, 255, 255, 0.032) 1px,
+      rgba(0, 0, 0, 0.28) 1px,
+      rgba(0, 0, 0, 0.28) 16px,
+      transparent 16px,
+      transparent 34px
+    ),
+    radial-gradient(
+      ellipse 78% 58% at 50% 18%,
+      rgba(140, 20, 32, 0.72) 0%,
+      rgba(61, 8, 14, 0.52) 44%,
+      rgba(10, 8, 9, 0.96) 82%
+    );
+}
+
+.bento-card {
+  @apply bg-[#140F11]/80 backdrop-blur-md border border-white/10 rounded-2xl;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes slow-amber-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-amber-glow {
+  animation: slow-amber-pulse 2.6s ease-in-out infinite;
+}
+
+.maplibregl-canvas {
+  filter: invert(100%) hue-rotate(180deg) brightness(92%) contrast(92%);
+}

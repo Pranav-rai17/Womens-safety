@@ -1,0 +1,38 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+*.local
+
+# Python / Backend
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+
+# Databases & Local Audio Evidence
+*.db
+*.sqlite
+*.sqlite3
+safeguard_audio/
+/tmp/safeguard_audio/
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
